@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Review</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>Technical Review</h1>
+    <nav>
+        <ul>
+            <li><a href="inspection.html">Next: Inspection</a></li>
+            <li><a href="walkthrough.html">Previous: Walkthrough</a></li>
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Definition</h2>
+        <p>A technical review is a formal process conducted by a team of technically qualified personnel to evaluate the quality and consistency of a work product. The review is structured and often involves the use of a checklist to ensure all critical aspects are covered.</p>
+    </section>
+    <section>
+        <h2>Practical Example</h2>
+        <p>Let's perform a technical review on a code snippet that handles user input validation. Use the checklist provided to evaluate the code.</p>
+        <pre><code>
+// Function to validate user input
+function validateInput(input) {
+    if (typeof input !== 'string') {
+        return false; // Invalid input type
+    }
+    if (input.trim() === '') {
+        return false; // Empty input
+    }
+    return true; // Valid input
+}
+            </code></pre>
+        <form id="technical-review-form">
+            <h3>Technical Review Checklist</h3>
+            <label>
+                <input type="checkbox" name="checklist" value="input-type"> Validates input type
+            </label><br>
+            <label>
+                <input type="checkbox" name="checklist" value="input-empty"> Checks for empty input
+            </label><br>
+            <label>
+                <input type="checkbox" name="checklist" value="input-valid"> Returns true for valid input
+            </label><br>
+            <label>
+                <input type="checkbox" name="checklist" value="edge-cases"> Handles edge cases effectively
+            </label><br>
+            <button type="submit">Submit Checklist</button>
+        </form>
+        <div id="technical-review-response"></div>
+        <button id="show-answer-btn-technical" style="display: none;">Show Correct Answer</button>
+        <div id="correct-answer-technical" class="correct-answer" style="display: none;">
+            <h3>Correct Answer:</h3>
+            <p>The function correctly handles input type and empty strings but could be improved by handling edge cases like very long strings or non-string inputs.</p>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="../js/review.js"></script>
+</body>
+</html>

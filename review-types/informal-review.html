@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informal Review</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>Informal Review</h1>
+    <nav>
+        <ul>
+            <li><a href="walkthrough.html">Next: Walkthrough</a></li>
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Definition</h2>
+        <p>An informal review is a simple, flexible process that is often used in agile projects. Unlike formal reviews, it does not follow a defined process and does not require formal documentation.</p>
+    </section>
+    <section>
+        <h2>Practical Example</h2>
+        <p>Below is a simple code snippet for a login function. Review the code and provide feedback on any issues you find.</p>
+        <pre><code>
+// Simple login function
+function validateLogin(username, password) {
+    if (username == '' || password == '') {
+        return false; // Missing input
+    }
+    return true; // Valid input
+}
+            </code></pre>
+        <form id="review-form">
+            <label for="feedback">Your Review:</label>
+            <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
+        <div id="response"></div>
+        <button id="show-answer-btn-review" style="display: none;">Show Correct Answer</button>
+        <div id="correct-answer-review" class="correct-answer" style="display: none;">
+            <h3>Correct Answer:</h3>
+            <p>The code does not handle edge cases, such as null values or non-string input. Additionally, it would be better to trim the username and password to remove any accidental whitespace.</p>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="../js/review.js"></script>
+</body>
+</html>

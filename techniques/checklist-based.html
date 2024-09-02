@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist-based Review</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>Checklist-based Review</h1>
+    <nav>
+        <ul>
+            <li><a href="scenario-based.html">Next: Scenario-based Review</a></li>
+            <li><a href="ad-hoc.html">Previous: Ad-hoc Review</a></li>
+            <li><a href="index.html">Back to Techniques</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Definition</h2>
+        <p>A Checklist-based review uses a predefined list of criteria or potential defects to guide the review process. This method ensures that reviewers consistently evaluate specific aspects of the software.</p>
+    </section>
+    <section>
+        <h2>Practical Example</h2>
+        <p>Use the checklist below to review the following code snippet. Check off each item that the code meets.</p>
+        <pre><code>
+// Function to calculate the perimeter of a rectangle
+function calculatePerimeter(length, width) {
+    return 2 * (length + width);
+}
+
+// Example usage
+console.log(calculatePerimeter(5, 10)); // Outputs: 30
+            </code></pre>
+        <form id="checklist-review-form">
+            <h3>Review Checklist</h3>
+            <label>
+                <input type="checkbox" name="checklist" value="valid-inputs"> Validates input types
+            </label><br>
+            <label>
+                <input type="checkbox" name="checklist" value="correct-calculation"> Correctly calculates perimeter
+            </label><br>
+            <label>
+                <input type="checkbox" name="checklist" value="edge-cases"> Handles edge cases (e.g., negative values)
+            </label><br>
+            <button type="submit">Submit Checklist</button>
+        </form>
+        <div id="checklist-response"></div>
+    </section>
+</main>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="../js/techniques.js"></script>
+</body>
+</html>

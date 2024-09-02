@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walkthrough</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>Walkthrough</h1>
+    <nav>
+        <ul>
+            <li><a href="technical-review.html">Next: Technical Review</a></li>
+            <li><a href="informal-review.html">Previous: Informal Review</a></li>
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Definition</h2>
+        <p>A walkthrough is a step-by-step presentation by the author of a document to gather information and build understanding among the participants. It can be formal or informal and is typically used to evaluate the quality of the work product.</p>
+    </section>
+    <section>
+        <h2>Practical Example</h2>
+        <p>Imagine you're participating in a walkthrough of a function that calculates the total price of items in a shopping cart. The author will guide you through the code to discuss its logic and identify any potential issues.</p>
+        <pre>
+            <code>
+<span class="tooltip">function calculateTotalPrice(items) {<span class="tooltiptext">This is the function declaration. It takes an array of items as an argument.</span></span>
+<span class="tooltip">    let total = 0;<span class="tooltiptext">Initialize a variable to keep track of the total price.</span></span>
+<span class="tooltip">    for (let i = 0; i < items.length; i++) {<span class="tooltiptext">Start a loop to iterate through each item in the cart.</span></span>
+<span class="tooltip">        total += items[i].price * items[i].quantity;<span class="tooltiptext">For each item, multiply the price by the quantity and add the result to the total.</span></span>
+<span class="tooltip">    }<span class="tooltiptext">End of the loop.</span></span>
+<span class="tooltip">    return total;<span class="tooltiptext">Return the calculated total price.</span></span>
+<span class="tooltip">}<span class="tooltiptext">End of the function.</span></span>
+
+<span class="tooltip">// Example usage<span class="tooltiptext">This is an example of how to use the function.</span></span>
+<span class="tooltip">const cartItems = [<span class="tooltiptext">Define an array of items in the shopping cart.</span></span>
+<span class="tooltip">    { name: 'Shirt', price: 20, quantity: 2 },<span class="tooltiptext">The first item is a shirt that costs $20 and the quantity is 2.</span></span>
+<span class="tooltip">    { name: 'Pants', price: 40, quantity: 1 }<span class="tooltiptext">The second item is a pair of pants that costs $40 and the quantity is 1.</span></span>
+<span class="tooltip">];<span class="tooltiptext">End of the array definition.</span></span>
+<span class="tooltip">console.log(calculateTotalPrice(cartItems)); // Outputs: 80<span class="tooltiptext">Call the function and log the total price to the console.</span></span>
+            </code>
+        </pre>
+        <form id="walkthrough-form">
+            <label for="comments">Your Comments:</label>
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+            <button type="submit">Submit Comments</button>
+        </form>
+        <div id="walkthrough-response"></div>
+        <button id="show-answer-btn-walkthrough" style="display: none;">Show Correct Answer</button>
+        <div id="correct-answer-walkthrough" class="correct-answer" style="display: none;">
+            <h3>Correct Answer:</h3>
+            <p>The code correctly calculates the total price but does not handle cases where the price or quantity is negative or not a number. It could also be improved by checking for valid input types.</p>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="../js/review.js"></script>
+</body>
+</html>

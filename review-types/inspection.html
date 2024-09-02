@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspection</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>Inspection</h1>
+    <nav>
+        <ul>
+            <li><a href="technical-review.html">Previous: Technical Review</a></li>
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Definition</h2>
+        <p>Inspection is the most formal type of review. It follows a well-defined process and is designed to find as many defects as possible. Inspections often include metrics collection, which can be used to improve the development process. The roles in an inspection typically include the author, reviewer(s), moderator, and scribe.</p>
+    </section>
+    <section>
+        <h2>Practical Example</h2>
+        <p>In this exercise, you'll participate in a simulated inspection of a code snippet that processes orders. Follow the structured steps, and take on different roles to experience the inspection process.</p>
+        <pre><code>
+// Function to process orders
+function processOrder(order) {
+    if (!order || !order.items || order.items.length === 0) {
+        return 'Invalid order'; // No items in the order
+    }
+
+    let total = 0;
+    for (let i = 0; i < order.items.length; i++) {
+        total += order.items[i].price * order.items[i].quantity;
+    }
+
+    return `Order total is ${total}`;
+}
+
+// Example usage
+const order = {
+    items: [
+        { name: 'Book', price: 15, quantity: 2 },
+        { name: 'Pen', price: 2, quantity: 5 }
+    ]
+};
+console.log(processOrder(order)); // Outputs: Order total is 40
+            </code></pre>
+        <h3>Inspection Roles</h3>
+        <ul>
+            <li><strong>Author:</strong> Explains the code and responds to questions.</li>
+            <li><strong>Reviewer:</strong> Identifies defects and suggests improvements.</li>
+            <li><strong>Moderator:</strong> Leads the inspection, ensures the process is followed.</li>
+            <li><strong>Scribe:</strong> Records defects and decisions made during the inspection.</li>
+        </ul>
+        <form id="inspection-form">
+            <h3>Submit Your Findings</h3>
+            <label for="findings">Your Findings:</label>
+            <textarea id="findings" name="findings" rows="4" cols="50"></textarea><br>
+            <button type="submit">Submit Findings</button>
+        </form>
+        <div id="inspection-response"></div>
+        <button id="show-answer-btn-inspection" style="display: none;">Show Correct Answer</button>
+        <div id="correct-answer-inspection" class="correct-answer" style="display: none;">
+            <h3>Correct Answer:</h3>
+            <p>The function correctly processes orders but could be improved by handling cases where items have negative quantities or prices. Additionally, it could include input validation to ensure that all order details are correct.</p>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="../js/review.js"></script>
+</body>
+</html>

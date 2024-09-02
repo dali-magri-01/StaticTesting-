@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perspective-based Review</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>Perspective-based Review</h1>
+    <nav>
+        <ul>
+            <li><a href="role-based.html">Previous: Role-based Review</a></li>
+            <li><a href="index.html">Back to Techniques</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Definition</h2>
+        <p>Perspective-based reviews extend role-based reviews by considering different perspectives such as security, usability, and performance. This approach ensures that the software is evaluated from multiple angles, increasing the likelihood of identifying potential issues.</p>
+    </section>
+    <section>
+        <h2>Practical Example</h2>
+        <p>Consider the following code snippet that handles user registration. Review it from a specific perspective, such as security or usability.</p>
+        <pre><code>
+// Function to register a new user
+function registerUser(username, password) {
+    if (username.length < 5) {
+        return 'Username must be at least 5 characters long';
+    }
+    if (password.length < 8) {
+        return 'Password must be at least 8 characters long';
+    }
+    // Simulate user registration
+    return 'User registered successfully';
+}
+
+// Example usage
+console.log(registerUser('user1', 'password123')); // Outputs: 'User registered successfully'
+            </code></pre>
+        <p>Select your perspective and provide your review:</p>
+        <form id="perspective-review-form">
+            <label for="perspective">Select Your Perspective:</label>
+            <select id="perspective" name="perspective">
+                <option value="security">Security</option>
+                <option value="usability">Usability</option>
+                <option value="performance">Performance</option>
+            </select><br><br>
+            <label for="perspective-feedback">Your Review:</label>
+            <textarea id="perspective-feedback" name="perspective-feedback" rows="4" cols="50"></textarea><br>
+            <button type="submit">Submit Review</button>
+        </form>
+        <div id="perspective-response"></div>
+    </section>
+</main>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="../js/techniques.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad-hoc Review</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>Ad-hoc Review</h1>
+    <nav>
+        <ul>
+            <li><a href="checklist-based.html">Next: Checklist-based Review</a></li>
+            <li><a href="index.html">Back to Techniques</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Definition</h2>
+        <p>An Ad-hoc review is an informal and unstructured approach to reviewing software. It relies heavily on the experience and intuition of the reviewers and does not follow a predefined process.</p>
+    </section>
+    <section>
+        <h2>Practical Example</h2>
+        <p>Review the following code snippet without using any predefined criteria. Identify any issues based on your experience and knowledge.</p>
+        <pre><code>
+// Simple function to calculate the area of a rectangle
+function calculateArea(length, width) {
+    return length * width;
+}
+
+// Example usage
+console.log(calculateArea(5, 10)); // Outputs: 50
+            </code></pre>
+        <form id="ad-hoc-review-form">
+            <label for="ad-hoc-feedback">Your Feedback:</label>
+            <textarea id="ad-hoc-feedback" name="ad-hoc-feedback" rows="4" cols="50"></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <div id="ad-hoc-response"></div>
+    </section>
+</main>
+<footer>
+    <p>Copyright Ouajdi Belhaj 2024</p>
+</footer>
+<script src="../js/techniques.js"></script>
+</body>
+</html>
