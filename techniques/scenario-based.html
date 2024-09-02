@@ -12,43 +12,42 @@
     <nav>
         <ul>
             <li><a href="role-based.html">Next: Role-based Review</a></li>
-            <li><a href="checklist-based.html">Previous: Checklist-based Review</a></li>
-            <li><a href="index.html">Back to Techniques</a></li>
+            <li><a href="checklist-based.html">Back to Checklist-based Review</a></li>
+            <li><a href="../index.html">Home</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <section>
         <h2>Definition</h2>
-        <p>A Scenario-based review involves evaluating the software by considering specific user scenarios. This method helps ensure that the software behaves correctly in real-world situations.</p>
+        <p>A scenario-based review involves reviewing the work product by considering different scenarios in which the product might be used. This technique helps ensure that the product meets user needs in a variety of situations.</p>
     </section>
     <section>
         <h2>Practical Example</h2>
-        <p>Imagine the following code is part of an online shopping system. Review it based on the scenario where a customer adds items to their cart and checks out.</p>
-        <pre><code>
-// Function to add item to cart
-function addItemToCart(cart, item) {
-    cart.push(item);
-    return cart;
+        <p>Consider the following scenario: A customer is trying to purchase a product using a discount code. Review the following code to ensure it handles this scenario correctly.</p>
+        <pre>
+            <code>
+// Example code for review
+function applyDiscount(price, discountCode) {
+    const discount = discountCode === 'SAVE10' ? 0.1 : 0;
+    return price - (price * discount);
 }
 
-// Example usage
-let cart = [];
-cart = addItemToCart(cart, { name: 'Laptop', price: 1000 });
-console.log(cart); // Outputs: [{ name: 'Laptop', price: 1000 }]
-            </code></pre>
-        <p>Consider the following scenario while reviewing the code:</p>
-        <ul>
-            <li>The customer adds multiple items to their cart.</li>
-            <li>The customer removes an item and then adds another one.</li>
-            <li>The customer checks out, and the total price is calculated.</li>
-        </ul>
+const finalPrice = applyDiscount(100, 'SAVE10');
+console.log(finalPrice); // Outputs: 90
+            </code>
+        </pre>
         <form id="scenario-review-form">
-            <label for="scenario-feedback">Your Review Based on the Scenario:</label>
+            <label for="scenario-feedback">Your Review:</label>
             <textarea id="scenario-feedback" name="scenario-feedback" rows="4" cols="50"></textarea>
             <button type="submit">Submit Review</button>
         </form>
         <div id="scenario-response"></div>
+        <button id="show-answer-btn-scenario" style="display: none;">Show Correct Answer</button>
+        <div id="correct-answer-scenario" class="correct-answer" style="display: none;">
+            <h3>Correct Answer:</h3>
+            <p>The code should validate that the discount code is valid before applying the discount. Additionally, it should handle cases where the discount code is incorrect or not provided.</p>
+        </div>
     </section>
 </main>
 <footer>

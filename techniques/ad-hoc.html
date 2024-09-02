@@ -12,33 +12,41 @@
     <nav>
         <ul>
             <li><a href="checklist-based.html">Next: Checklist-based Review</a></li>
-            <li><a href="index.html">Back to Techniques</a></li>
+            <li><a href="review-techniques.html">Back to Review Techniques</a></li>
+            <li><a href="../index.html">Home</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <section>
         <h2>Definition</h2>
-        <p>An Ad-hoc review is an informal and unstructured approach to reviewing software. It relies heavily on the experience and intuition of the reviewers and does not follow a predefined process.</p>
+        <p>An ad-hoc review is an informal review process where the reviewer examines the work product without following a structured procedure. The effectiveness of an ad-hoc review largely depends on the reviewer's experience and knowledge of the product being reviewed.</p>
     </section>
     <section>
         <h2>Practical Example</h2>
-        <p>Review the following code snippet without using any predefined criteria. Identify any issues based on your experience and knowledge.</p>
-        <pre><code>
-// Simple function to calculate the area of a rectangle
-function calculateArea(length, width) {
-    return length * width;
+        <p>Consider the following piece of code that calculates a discount on a product price. Perform an ad-hoc review to identify potential issues with the code.</p>
+        <pre>
+            <code>
+// Example code for review
+function calculateDiscount(price, discount) {
+    return price - (price * discount);
 }
 
-// Example usage
-console.log(calculateArea(5, 10)); // Outputs: 50
-            </code></pre>
+const discountedPrice = calculateDiscount(100, 0.15);
+console.log(discountedPrice); // Outputs: 85
+            </code>
+        </pre>
         <form id="ad-hoc-review-form">
-            <label for="ad-hoc-feedback">Your Feedback:</label>
+            <label for="ad-hoc-feedback">Your Comments:</label>
             <textarea id="ad-hoc-feedback" name="ad-hoc-feedback" rows="4" cols="50"></textarea>
-            <button type="submit">Submit Feedback</button>
+            <button type="submit">Submit Review</button>
         </form>
         <div id="ad-hoc-response"></div>
+        <button id="show-answer-btn-ad-hoc" style="display: none;">Show Correct Answer</button>
+        <div id="correct-answer-ad-hoc" class="correct-answer" style="display: none;">
+            <h3>Correct Answer:</h3>
+            <p>The code does not account for invalid inputs such as a negative price or discount. Additionally, there is no validation to ensure that the discount is within a reasonable range (e.g., between 0 and 1).</p>
+        </div>
     </section>
 </main>
 <footer>

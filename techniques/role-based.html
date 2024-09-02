@@ -12,45 +12,47 @@
     <nav>
         <ul>
             <li><a href="perspective-based.html">Next: Perspective-based Review</a></li>
-            <li><a href="scenario-based.html">Previous: Scenario-based Review</a></li>
-            <li><a href="index.html">Back to Techniques</a></li>
+            <li><a href="scenario-based.html">Back to Scenario-based Review</a></li>
+            <li><a href="../index.html">Home</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <section>
         <h2>Definition</h2>
-        <p>A Role-based review involves evaluating the software from the perspective of different stakeholders, such as a user, developer, or tester. This technique helps ensure that the software meets the needs of all its stakeholders.</p>
+        <p>A role-based review involves reviewing the work product from the perspective of different stakeholders, such as end-users, developers, or testers. This helps ensure that the product meets the needs of all involved parties.</p>
     </section>
     <section>
         <h2>Practical Example</h2>
-        <p>Imagine you are part of a team reviewing the login functionality of a website. Review the code snippet below from the perspective of your assigned role (e.g., user, developer, tester).</p>
-        <pre><code>
-// Function to validate user login
-function validateLogin(username, password) {
-    if (!username || !password) {
-        return 'Username and password are required';
-    }
-    // Simulate a login attempt
-    return 'Login successful';
+        <p>Review the following code from the perspective of a security analyst, developer, or tester. Identify any potential issues.</p>
+        <pre>
+            <code>
+// Example code for review
+function processPayment(cardNumber, amount) {
+    console.log(`Processing payment of ${amount} for card number ${cardNumber}`);
+    // Payment processing logic here
 }
 
-// Example usage
-console.log(validateLogin('user1', 'password123')); // Outputs: 'Login successful'
-            </code></pre>
-        <p>Select your role and provide your review:</p>
+processPayment('1234-5678-9012-3456', 100);
+            </code>
+        </pre>
         <form id="role-review-form">
             <label for="role">Select Your Role:</label>
             <select id="role" name="role">
-                <option value="user">User</option>
-                <option value="developer">Developer</option>
-                <option value="tester">Tester</option>
-            </select><br><br>
+                <option value="Security Analyst">Security Analyst</option>
+                <option value="Developer">Developer</option>
+                <option value="Tester">Tester</option>
+            </select>
             <label for="role-feedback">Your Review:</label>
-            <textarea id="role-feedback" name="role-feedback" rows="4" cols="50"></textarea><br>
+            <textarea id="role-feedback" name="role-feedback" rows="4" cols="50"></textarea>
             <button type="submit">Submit Review</button>
         </form>
         <div id="role-response"></div>
+        <button id="show-answer-btn-role" style="display: none;">Show Correct Answer</button>
+        <div id="correct-answer-role" class="correct-answer" style="display: none;">
+            <h3>Correct Answer:</h3>
+            <p id="role-specific-answer"></p>
+        </div>
     </section>
 </main>
 <footer>

@@ -12,42 +12,51 @@
     <nav>
         <ul>
             <li><a href="scenario-based.html">Next: Scenario-based Review</a></li>
-            <li><a href="ad-hoc.html">Previous: Ad-hoc Review</a></li>
-            <li><a href="index.html">Back to Techniques</a></li>
+            <li><a href="ad-hoc.html">Back to Ad-hoc Review</a></li>
+            <li><a href="../index.html">Home</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <section>
         <h2>Definition</h2>
-        <p>A Checklist-based review uses a predefined list of criteria or potential defects to guide the review process. This method ensures that reviewers consistently evaluate specific aspects of the software.</p>
+        <p>A checklist-based review is a formal review process where the reviewer uses a checklist of items to guide the review. The checklist typically includes common issues and specific areas to examine within the work product.</p>
     </section>
     <section>
         <h2>Practical Example</h2>
-        <p>Use the checklist below to review the following code snippet. Check off each item that the code meets.</p>
-        <pre><code>
-// Function to calculate the perimeter of a rectangle
-function calculatePerimeter(length, width) {
-    return 2 * (length + width);
-}
+        <p>Consider the following checklist items. Select the ones that you think apply to the given code:</p>
+        <pre>
+            <code>
+// Example code for review
+function processOrder(order) {
+    if (!order || !order.items || order.items.length === 0) {
+        return 'Invalid order';
+    }
 
-// Example usage
-console.log(calculatePerimeter(5, 10)); // Outputs: 30
-            </code></pre>
+    let total = 0;
+    for (let i = 0; i < order.items.length; i++) {
+        total += order.items[i].price * order.items[i].quantity;
+    }
+
+    return `Order total is ${total}`;
+}
+            </code>
+        </pre>
         <form id="checklist-review-form">
-            <h3>Review Checklist</h3>
-            <label>
-                <input type="checkbox" name="checklist" value="valid-inputs"> Validates input types
-            </label><br>
-            <label>
-                <input type="checkbox" name="checklist" value="correct-calculation"> Correctly calculates perimeter
-            </label><br>
-            <label>
-                <input type="checkbox" name="checklist" value="edge-cases"> Handles edge cases (e.g., negative values)
-            </label><br>
-            <button type="submit">Submit Checklist</button>
+            <label for="checklist">Select applicable checklist items:</label>
+            <ul>
+                <li><input type="checkbox" name="checklist" value="1"> Input validation</li>
+                <li><input type="checkbox" name="checklist" value="2"> Handling of negative values</li>
+                <li><input type="checkbox" name="checklist" value="3"> Correct calculation of totals</li>
+            </ul>
+            <button type="submit">Submit Review</button>
         </form>
         <div id="checklist-response"></div>
+        <button id="show-answer-btn-checklist" style="display: none;">Show Correct Answer</button>
+        <div id="correct-answer-checklist" class="correct-answer" style="display: none;">
+            <h3>Correct Answer:</h3>
+            <p>The code should include input validation, particularly for checking that prices and quantities are positive numbers. It currently does not handle negative values correctly.</p>
+        </div>
     </section>
 </main>
 <footer>

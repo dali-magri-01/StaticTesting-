@@ -11,48 +11,58 @@
     <h1>Perspective-based Review</h1>
     <nav>
         <ul>
-            <li><a href="role-based.html">Previous: Role-based Review</a></li>
-            <li><a href="index.html">Back to Techniques</a></li>
+            <li><a href="role-based.html">Back to Role-based Review</a></li>
+            <li><a href="review-techniques.html">Back to Review Techniques</a></li>
+            <li><a href="../index.html">Home</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <section>
         <h2>Definition</h2>
-        <p>Perspective-based reviews extend role-based reviews by considering different perspectives such as security, usability, and performance. This approach ensures that the software is evaluated from multiple angles, increasing the likelihood of identifying potential issues.</p>
+        <p>A perspective-based review involves reviewing the work product from different perspectives, such as a usability perspective, performance perspective, or security perspective. This ensures that the product is well-rounded and meets all necessary requirements.</p>
     </section>
     <section>
         <h2>Practical Example</h2>
-        <p>Consider the following code snippet that handles user registration. Review it from a specific perspective, such as security or usability.</p>
-        <pre><code>
-// Function to register a new user
-function registerUser(username, password) {
-    if (username.length < 5) {
-        return 'Username must be at least 5 characters long';
+        <p>Review the following code from a performance, usability, or security perspective. Identify any potential issues.</p>
+        <pre>
+            <code>
+// Example code for review
+function processData(data) {
+    let result = [];
+    for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < data[i].items.length; j++) {
+            result.push(data[i].items[j]);
+        }
     }
-    if (password.length < 8) {
-        return 'Password must be at least 8 characters long';
-    }
-    // Simulate user registration
-    return 'User registered successfully';
+    return result;
 }
 
-// Example usage
-console.log(registerUser('user1', 'password123')); // Outputs: 'User registered successfully'
-            </code></pre>
-        <p>Select your perspective and provide your review:</p>
+const data = [
+    { items: [1, 2, 3] },
+    { items: [4, 5, 6] },
+    { items: [7, 8, 9] }
+];
+console.log(processData(data)); // Outputs: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            </code>
+        </pre>
         <form id="perspective-review-form">
             <label for="perspective">Select Your Perspective:</label>
             <select id="perspective" name="perspective">
-                <option value="security">Security</option>
-                <option value="usability">Usability</option>
-                <option value="performance">Performance</option>
-            </select><br><br>
+                <option value="Performance">Performance</option>
+                <option value="Usability">Usability</option>
+                <option value="Security">Security</option>
+            </select>
             <label for="perspective-feedback">Your Review:</label>
-            <textarea id="perspective-feedback" name="perspective-feedback" rows="4" cols="50"></textarea><br>
+            <textarea id="perspective-feedback" name="perspective-feedback" rows="4" cols="50"></textarea>
             <button type="submit">Submit Review</button>
         </form>
         <div id="perspective-response"></div>
+        <button id="show-answer-btn-perspective" style="display: none;">Show Correct Answer</button>
+        <div id="correct-answer-perspective" class="correct-answer" style="display: none;">
+            <h3>Correct Answer:</h3>
+            <p id="perspective-specific-answer"></p>
+        </div>
     </section>
 </main>
 <footer>
